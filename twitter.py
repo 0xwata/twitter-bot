@@ -64,9 +64,7 @@ def delete_all_rules(rules):
 
 def set_rules(delete):
     rules = [
-        {
-            "value": "to:sample_bot_wata"
-        }
+        {"value":"(\"@___wata___\" -from:___wata___)"}
     ]
     payload = {"add": rules}
     response = requests.post(
@@ -102,6 +100,8 @@ def get_stream(set):
                         reply_text = json_response["data"]["text"]  # 相手の送ってきた内容
 
                         # 投稿フォーマットのバリデーション
+                        print(tweet_id)
+                        print(reply_text)
 
                         # DB（SpreadSheet）にデータを追加する
 
